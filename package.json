@@ -3,7 +3,7 @@
   "version": "v1.10.1",
   "description": "Digital Design and Development Project",
   "main": "index.php",
-  "repository": "https://github.com/marcuspalmerstudent/ddd.git",
+  "repository": "https://github.com/marcuspalmerstudent/postcodeapplication.git",
   "author": "Marcus Palmer",
   "license": "GNU GENERAL PUBLIC LICENSE",
   "private": true,
