@@ -1,0 +1,976 @@
+// Name:            Navbar
+// Description:     Component to create horizontal navigation bars
+//
+// Component:       `uk-navbar`
+//
+// Sub-objects:     `uk-navbar-container`
+//                  `uk-navbar-left`
+//                  `uk-navbar-right`
+//                  `uk-navbar-center`
+//                  `uk-navbar-center-left`
+//                  `uk-navbar-center-right`
+//                  `uk-navbar-nav`
+//                  `uk-navbar-item`
+//                  `uk-navbar-toggle`
+//                  `uk-navbar-subtitle`
+//                  `uk-navbar-dropbar`
+//
+// Adopted:         `uk-navbar-dropdown` + Modifiers
+//                  `uk-navbar-dropdown-nav`
+//                  `uk-navbar-dropdown-grid`
+//                  `uk-navbar-toggle-icon`
+//
+// Modifiers:       `uk-navbar-primary`
+//                  `uk-navbar-transparent`
+//                  `uk-navbar-sticky`
+//                  `uk-navbar-dropdown-stack`
+//
+// States:          `uk-active`
+//                  `uk-parent`
+//                  `uk-open`
+//
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@navbar-background:                             @global-muted-background;
+
+@navbar-fxprodesign-background:                 @global-fxprodesign-background;
+
+@marcus-palmer-nav-colour:                      @marcus-palmer-navigation-background;
+
+@navbar-color-mode:                             none;
+
+@navbar-nav-item-height:                        80px;
+@navbar-nav-item-padding-horizontal:            15px;
+@navbar-nav-item-color:                         @global-muted-color;
+@navbar-nav-item-font-size:                     @global-nav-font-size;
+@navbar-nav-item-font-family:                   @global-font-family;
+@navbar-nav-item-hover-color:                   #74bbdd;
+@navbar-nav-item-onclick-color:                 @global-emphasis-color;
+@navbar-nav-item-active-color:                  #505a8d;
+@navbar-marcus-palmer-nav-item-active-color:                  #505a8d;
+@navbar-fxprodesign-nav-item-active-color:      #505a8d;
+
+@navbar-item-color:                             @global-color;
+
+@navbar-toggle-color:                           @global-muted-color;
+@navbar-toggle-hover-color:                    @global-color;
+
+@navbar-subtitle-font-size:                     @global-small-font-size;
+
+@navbar-dropdown-z-index:                       @global-z-index + 20;
+@navbar-dropdown-width:                         200px;
+@navbar-dropdown-margin:                        0;
+@navbar-dropdown-padding:                       15px;
+@navbar-dropdown-background:                   @global-fxprodesign-background;
+@navbar-dropdown-color:                         @global-color;
+@navbar-dropdown-grid-gutter-horizontal:        @global-gutter;
+@navbar-dropdown-grid-gutter-vertical:          @navbar-dropdown-grid-gutter-horizontal;
+
+@navbar-dropdown-dropbar-margin-top:            0;
+@navbar-dropdown-dropbar-margin-bottom:         @navbar-dropdown-dropbar-margin-top;
+
+@navbar-dropdown-nav-item-color:                @global-muted-color;
+@navbar-dropdown-nav-item-hover-color:          #74bbdd;
+@navbar-dropdown-nav-item-active-color:         #505a8d;
+@navbar-dropdown-nav-header-color:              @global-emphasis-color;
+@navbar-dropdown-nav-divider-border-width:      @global-border-width;
+@navbar-dropdown-nav-divider-border:            @global-border-fxprodesign;
+@navbar-dropdown-nav-sublist-item-color:        @global-muted-color;
+@navbar-dropdown-nav-sublist-item-hover-color:  @global-color;
+@navbar-dropdown-nav-sublist-item-active-color: @global-emphasis-color;
+
+@navbar-dropbar-background:                     @navbar-dropdown-background;
+@navbar-dropbar-z-index:                        @global-z-index - 20;
+
+
+/* ========================================================================
+   Component: Navbar
+ ========================================================================== */
+
+/*
+ * 1. Create position context to center navbar group
+ */
+
+.uk-navbar {
+    display: flex;
+    /* 1 */
+    position: relative;
+    .hook-navbar;
+}
+
+.uk-navbar-fxprodesign {
+    display: flex;
+    /* 1 */
+    position: relative;
+    .hook-navbar;
+}
+
+
+/* Container
+ ========================================================================== */
+
+.uk-navbar-container:not(.uk-navbar-transparent) {
+    background: @navbar-background;
+    .hook-navbar-container;
+}
+
+// Color Mode
+.uk-navbar-container:not(.uk-navbar-transparent):extend(.uk-light all) when (@navbar-color-mode = light) {}
+.uk-navbar-container:not(.uk-navbar-transparent):extend(.uk-dark all) when (@navbar-color-mode = dark) {}
+
+//FX Pro Design 
+
+.uk-navbar-fxprodesign-container:not(.uk-navbar-transparent) {
+    background: @global-fxprodesign-background;
+    .hook-navbar-fxprodesign-container;
+}
+
+// Color FX ProDesign Mode
+.uk-navbar-fxprodesign-container:not(.uk-navbar-transparent):extend(.uk-light all) when (@navbar-color-mode = light) {}
+.uk-navbar-fxprodesign-container:not(.uk-navbar-transparent):extend(.uk-dark all) when (@navbar-color-mode = dark) {}
+
+
+
+//Marcus Palmer
+
+.uk-navbar-marcus-palmer-container:not(.uk-navbar-transparent) {
+    background: @marcus-palmer-nav-colour;
+    .hook-navbar-marcus-palmer-container;
+}
+
+// Color Marcus Palmer Mode
+.uk-navbar-marcus-palmer-container:not(.uk-navbar-transparent):extend(.uk-light all) when (@navbar-color-mode = light) {}
+.uk-navbar-marcus-palmer-container:not(.uk-navbar-transparent):extend(.uk-dark all) when (@navbar-color-mode = dark) {}
+
+/*
+ * Remove pseudo elements created by micro clearfix as precaution (if Container component is used)
+ */
+
+.uk-navbar-container > ::before,
+.uk-navbar-container > ::after { display: none !important; }
+
+.uk-navbar-fxprodesign-container > ::before,
+.uk-navbar-fxprodesign-container > ::after { display: none !important; }
+
+
+/* Groups
+ ========================================================================== */
+
+/*
+ * 1. Align navs and items vertically if they have a different height
+ * 2. Note: IE 11 requires an extra `div` which affects the center selector
+ */
+
+.uk-navbar-left,
+.uk-navbar-right,
+// 2. [class*='uk-navbar-center'],
+.uk-navbar-center,
+.uk-navbar-center-left > *,
+.uk-navbar-center-right > * {
+    display: flex;
+    /* 1 */
+    align-items: center;
+}
+
+.uk-navbar-fxprodesign-left,
+.uk-navbar-fxprodesign-right,
+// 2. [class*='uk-navbar-center'],
+.uk-navbar-fxprodesign-center,
+.uk-navbar-fxprodesign-center-left > *,
+.uk-navbar-fxprodesign-center-right > * {
+    display: flex;
+    /* 1 */
+    align-items: center;
+}
+
+
+.uk-navbar-marcus-palmer-left,
+.uk-navbar-marcus-palmer-right,
+// 2. [class*='uk-navbar-center'],
+.uk-navbar-marcus-palmer-center,
+.uk-navbar-marcus-palmer-center-left > *,
+.uk-navbar-marcus-palmer-center-right > * {
+    display: flex;
+    /* 1 */
+    align-items: center;
+}
+
+
+
+/*
+ * Horizontal alignment
+ * 1. Create position context for centered navbar with sub groups (left/right)
+ * 2. Fix text wrapping if content is larger than 50% of the container.
+ * 3. Needed for dropdowns because a new position context is created
+ *    `z-index` must be smaller than off-canvas
+ * 4. Align sub groups for centered navbar
+ */
+
+.uk-navbar-right { margin-left: auto; }
+
+.uk-navbar-center:only-child {
+    margin-left: auto;
+    margin-right: auto;
+    /* 1 */
+    position: relative;
+}
+
+.uk-navbar-fxprodesign-right { margin-left: auto; }
+
+.uk-navbar-fxprodesign-center:only-child {
+    margin-left: auto;
+    margin-right: auto;
+    /* 1 */
+    position: relative;
+}
+
+
+.uk-navbar-marcus-palmer-right { margin-left: auto; }
+
+.uk-navbar-marcus-palmer-center:only-child {
+    margin-left: auto;
+    margin-right: auto;
+    /* 1 */
+    position: relative;
+}
+
+
+.uk-navbar-center:not(:only-child) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* 2 */
+    width: max-content;
+    box-sizing: border-box;
+    /* 3 */
+    z-index: @global-z-index - 10;
+}
+
+.uk-navbar-fxprodesign-center:not(:only-child) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* 2 */
+    width: max-content;
+    box-sizing: border-box;
+    /* 3 */
+    z-index: @global-z-index - 10;
+}
+
+
+.uk-navbar-marcus-palmer-center:not(:only-child) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* 2 */
+    width: max-content;
+    box-sizing: border-box;
+    /* 3 */
+    z-index: @global-z-index - 10;
+}
+
+
+
+
+/* 4 */
+.uk-navbar-center-left,
+.uk-navbar-center-right {
+   position: absolute;
+   top: 0;
+}
+
+.uk-navbar-center-left { right: 100%; }
+.uk-navbar-center-right { left: 100%; }
+
+[class*='uk-navbar-center-'] {
+    width: max-content;
+    box-sizing: border-box;
+}
+
+
+/* 4 */
+.uk-navbar-fxprodesign-center-left,
+.uk-navbar-fxprodesign-center-right {
+   position: absolute;
+   top: 0;
+}
+
+.uk-navbar-fxprodesign-center-left { right: 100%; }
+.uk-navbar-fxprodesign-center-right { left: 100%; }
+
+[class*='uk-navbar-fxprodesign-center-'] {
+    width: max-content;
+    box-sizing: border-box;
+}
+
+/* 4 */
+.uk-navbar-marcus-palmer-center-left,
+.uk-navbar-marcus-palmer-center-right {
+   position: absolute;
+   top: 0;
+}
+
+.uk-navbar-marcus-palmer-center-left { right: 100%; }
+.uk-navbar-marcus-palmer-center-right { left: 100%; }
+
+[class*='uk-navbar-marcus-palmer-center-'] {
+    width: max-content;
+    box-sizing: border-box;
+}
+
+
+/* Nav
+ ========================================================================== */
+
+/*
+ * 1. Reset list
+ */
+
+.uk-navbar-nav {
+    display: flex;
+    /* 1 */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*
+ * 1. Reset list
+ */
+
+.uk-navbar-fxprodesign-nav {
+    display: flex;
+    /* 1 */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.uk-navbar-marcus-palmer-nav {
+    display: flex;
+    /* 1 */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*
+ * Allow items to wrap into the next line
+ * Only not `absolute` positioned groups
+ */
+
+.uk-navbar-left,
+.uk-navbar-right,
+.uk-navbar-center:only-child { flex-wrap: wrap; }
+
+
+.uk-navbar-fxprodesign-left,
+.uk-navbar-fxprodesign-right,
+.uk-navbar-fxprodesign-center:only-child { flex-wrap: wrap; }
+
+.uk-navbar-marcus-palmer-left,
+.uk-navbar-marcus-palmer-right,
+.uk-navbar-marcus-palmer-center:only-child { flex-wrap: wrap; }
+
+
+/*
+ * Items
+ * 1. Center content vertically and horizontally
+ * 2. Dimensions
+ * 3. Style
+ * 4. Required for `a`
+ */
+
+.uk-navbar-nav > li > a,    // Nav item
+.uk-navbar-item,            // Content item
+.uk-navbar-toggle {         // Clickable item
+    /* 1 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 2 */
+    box-sizing: border-box;
+    min-height: @navbar-nav-item-height;
+    padding: 0 @navbar-nav-item-padding-horizontal;
+    /* 3 */
+    font-size: @navbar-nav-item-font-size;
+    font-family: @navbar-nav-item-font-family;
+    /* 4 */
+    text-decoration: none;
+}
+
+.uk-navbar-fxprodesign-nav > li > a,    // Nav item
+.uk-navbar-fxprodesign-item,            // Content item
+.uk-navbar-fxprodesign-toggle {         // Clickable item
+    /* 1 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 2 */
+    box-sizing: border-box;
+    min-height: @navbar-nav-item-height;
+    padding: 0 @navbar-nav-item-padding-horizontal;
+    /* 3 */
+    font-size: @navbar-nav-item-font-size;
+    font-family: @navbar-nav-item-font-family;
+    /* 4 */
+    text-decoration: none;
+}
+
+
+.uk-navbar-marcus-palmer-nav > li > a,    // Nav item
+.uk-navbar-marcus-palmer-item,            // Content item
+.uk-navbar-marcus-palmer-toggle {         // Clickable item
+    /* 1 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 2 */
+    box-sizing: border-box;
+    min-height: @navbar-nav-item-height;
+    padding: 0 @navbar-nav-item-padding-horizontal;
+    /* 3 */
+    font-size: @navbar-nav-item-font-size;
+    font-family: @navbar-nav-item-font-family;
+    /* 4 */
+    text-decoration: none;
+}
+
+
+
+/*
+ * Nav items
+ */
+
+.uk-navbar-nav > li > a {
+    color: @navbar-nav-item-color;
+    .hook-navbar-nav-item;
+}
+
+.uk-navbar-fxprodesign-nav > li > a {
+    color: @navbar-nav-item-color;
+    .hook-navbar-fxprodesign-nav-item;
+}
+
+.uk-navbar-marcus-palmer-nav > li > a {
+    color: @navbar-nav-item-color;
+    .hook-navbar-marcus-palmer-nav-item;
+}
+
+
+/*
+ * Hover
+ * Apply hover style also to focus state and if dropdown is opened
+ */
+
+.uk-navbar-fxprodesign-nav > li:hover > a,
+.uk-navbar-fxprodesign-nav > li > a:focus,
+.uk-navbar-fxprodesign-nav > li > a.uk-open {
+    color: @navbar-nav-item-hover-color;
+    outline: none;
+    .hook-navbar-fxprodesign-nav-item-hover;
+}
+
+.uk-navbar-marcus-palmer-nav > li:hover > a,
+.uk-navbar-marcus-palmer-nav > li > a:focus,
+.uk-navbar-marcus-palmer-nav > li > a.uk-open {
+    color: @navbar-nav-item-hover-color;
+    outline: none;
+    .hook-navbar-marcus-palmer-nav-item-hover;
+}
+
+
+
+.uk-navbar-nav > li:hover > a,
+.uk-navbar-nav > li > a:focus,
+.uk-navbar-nav > li > a.uk-open {
+    color: @navbar-nav-item-hover-color;
+    outline: none;
+    .hook-navbar-nav-item-hover;
+}
+
+/* OnClick */
+.uk-navbar-fxprodesign-nav > li > a:active {
+    color: @navbar-nav-item-onclick-color;
+    .hook-navbar-fxprodesign-nav-item-onclick;
+}
+
+/* OnClick */
+.uk-navbar-fxprodesign-nav > li > a:active {
+    color: @navbar-nav-item-onclick-color;
+    .hook-navbar-fxprodesign-nav-item-onclick;
+}
+
+/* Active */
+.uk-navbar-nav > li.uk-active > a {
+    color: @navbar-nav-item-active-color;
+    .hook-navbar-nav-item-active;
+}
+
+/* Active */
+.uk-navbar-fxprodesign-nav > li.uk-fxpro-active > a {
+    color: @navbar-fxprodesign-nav-item-active-color;
+    .hook-navbar-fxprodesign-nav-item-active;
+}
+
+
+
+/* OnClick */
+.uk-navbar-marcus-palmer-nav > li > a:active {
+    color: @navbar-nav-item-onclick-color;
+    .hook-navbar-marcus-palmer-nav-item-onclick;
+}
+
+/* OnClick */
+.uk-navbar-marcus-palmer-nav > li > a:active {
+    color: @navbar-nav-item-onclick-color;
+    .hook-navbar-marcus-palmer-nav-item-onclick;
+}
+
+/* Active */
+.uk-navbar-nav > li.uk-active > a {
+    color: @navbar-nav-item-active-color;
+    .hook-navbar-nav-item-active;
+}
+
+/* Active */
+.uk-navbar-marcus-palmer-nav > li.uk-fxpro-active > a {
+    color: @navbar-marcus-palmer-nav-item-active-color;
+    .hook-navbar-marcus-palmer-nav-item-active;
+}
+
+
+/* Item
+ ========================================================================== */
+
+.uk-navbar-item {
+    color: @navbar-item-color;
+    .hook-navbar-item;
+}
+
+
+.uk-navbar-fxprodesign-item {
+    color: @navbar-item-color;
+    .hook-navbar-fxprodesign-item;
+}
+
+.uk-navbar-marcus-palmer-item {
+    color: @navbar-item-color;
+    .hook-navbar-marcus-palmer-item;
+}
+
+/* Toggle
+ ========================================================================== */
+
+.uk-navbar-toggle {
+    color: @navbar-toggle-color;
+    .hook-navbar-toggle;
+}
+
+.uk-navbar-toggle:hover,
+.uk-navbar-toggle:focus,
+.uk-navbar-toggle.uk-open {
+    color: @navbar-toggle-hover-color;
+    outline: none;
+    text-decoration: none;
+    .hook-navbar-toggle-hover;
+}
+
+
+.uk-navbar-fxprodesign-toggle {
+    color: @navbar-toggle-color;
+    .hook-navbar-fxprodesign-toggle;
+}
+
+.uk-navbar-fxprodesign-toggle:hover,
+.uk-navbar-fxprodesign-toggle:focus,
+.uk-navbar-fxprodesign-toggle.uk-open {
+    color: @navbar-toggle-hover-color;
+    outline: none;
+    text-decoration: none;
+    .hook-navbar-fxprodesign-toggle-hover;
+}
+
+
+.uk-navbar-marcus-palmer-toggle {
+    color: @navbar-toggle-color;
+    .hook-navbar-marcus-palmer-toggle;
+}
+
+.uk-navbar-marcus-palmer-toggle:hover,
+.uk-navbar-marcus-palmer-toggle:focus,
+.uk-navbar-marcus-palmer-toggle.uk-open {
+    color: @navbar-toggle-hover-color;
+    outline: none;
+    text-decoration: none;
+    .hook-navbar-marcus-palmer-toggle-hover;
+}
+
+
+
+/*
+ * Icon
+ * Adopts `uk-icon`
+ */
+
+.uk-navbar-toggle-icon {
+    .hook-navbar-toggle-icon;
+}
+
+/* Hover + Focus */
+:hover > .uk-navbar-toggle-icon,
+:focus > .uk-navbar-toggle-icon {
+    .hook-navbar-toggle-icon-hover;
+}
+
+
+
+.uk-navbar-fxprodesign-toggle-icon {
+    .hook-navbar-fxprodesign-toggle-icon;
+}
+
+/* Hover + Focus */
+:hover > .uk-navbar-fxprodesign-toggle-icon,
+:focus > .uk-navbar-fxprodesign-toggle-icon {
+    .hook-navbar-fxprodesign-toggle-icon-hover;
+}
+
+
+.uk-navbar-marcus-palmer-toggle-icon {
+    .hook-navbar-marcus-palmer-toggle-icon;
+}
+
+/* Hover + Focus */
+:hover > .uk-navbar-marcus-palmer-toggle-icon,
+:focus > .uk-navbar-marcus-palmer-toggle-icon {
+    .hook-navbar-marcus-palmer-toggle-icon-hover;
+}
+
+
+/* Subtitle
+ ========================================================================== */
+
+.uk-navbar-subtitle {
+    font-size: @navbar-subtitle-font-size;
+    .hook-navbar-subtitle;
+}
+
+.uk-navbar-fxprodesign-subtitle {
+    font-size: @navbar-subtitle-font-size;
+    .hook-navbar-fxprodesign-subtitle;
+}
+
+
+.uk-navbar-marcus-palmer-subtitle {
+    font-size: @navbar-subtitle-font-size;
+    .hook-navbar-marcus-palmer-subtitle;
+}
+
+/* Style modifiers
+ ========================================================================== */
+
+.uk-navbar-primary {
+    .hook-navbar-primary;
+}
+
+.uk-navbar-fxprodesign {
+    .hook-navbar-fxprodesign;
+}
+
+.uk-navbar-marcus-palmer {
+    .hook-navbar-marcus-palmer;
+}
+
+
+.uk-navbar-transparent {
+    .hook-navbar-transparent;
+}
+
+.uk-navbar-sticky {
+    .hook-navbar-sticky;
+}
+
+
+/* Dropdown
+ ========================================================================== */
+
+/*
+ * Adopts `uk-dropdown`
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Set a default width
+ * 4. Style
+ */
+
+.uk-navbar-dropdown {
+    /* 1 */
+    display: none;
+    /* 2 */
+    position: absolute;
+    z-index: @navbar-dropdown-z-index;
+    /* 3 */
+    box-sizing: border-box;
+    width: @navbar-dropdown-width;
+    /* 4 */
+    padding: @navbar-dropdown-padding;
+    background: @navbar-dropdown-background;
+    color: @navbar-dropdown-color;
+	font-size: @global-font-size;
+    .hook-navbar-dropdown;
+}
+
+/* Show */
+.uk-navbar-dropdown.uk-open { display: block; }
+
+/*
+ * Direction / Alignment modifiers
+ */
+
+/* Direction */
+[class*='uk-navbar-dropdown-top'] { margin-top: -@navbar-dropdown-margin; }
+[class*='uk-navbar-dropdown-bottom'] { margin-top: @navbar-dropdown-margin; }
+[class*='uk-navbar-dropdown-left'] { margin-left: -@navbar-dropdown-margin; }
+[class*='uk-navbar-dropdown-right'] { margin-left: @navbar-dropdown-margin; }
+
+/*
+ * Grid
+ * Adopts `uk-grid`
+ */
+
+/* Gutter Horizontal */
+.uk-navbar-dropdown-grid { margin-left: -@navbar-dropdown-grid-gutter-horizontal; }
+.uk-navbar-dropdown-grid > * { padding-left: @navbar-dropdown-grid-gutter-horizontal; }
+
+/* Gutter Vertical */
+.uk-navbar-dropdown-grid > .uk-grid-margin { margin-top: @navbar-dropdown-grid-gutter-vertical; }
+
+/* Stack */
+.uk-navbar-dropdown-stack .uk-navbar-dropdown-grid > * { width: 100% !important; }
+
+/*
+ * Width modifier
+ */
+
+.uk-navbar-dropdown-width-2:not(.uk-navbar-dropdown-stack) { width: (@navbar-dropdown-width * 2); }
+.uk-navbar-dropdown-width-3:not(.uk-navbar-dropdown-stack) { width: (@navbar-dropdown-width * 3); }
+.uk-navbar-dropdown-width-4:not(.uk-navbar-dropdown-stack) { width: (@navbar-dropdown-width * 4); }
+.uk-navbar-dropdown-width-5:not(.uk-navbar-dropdown-stack) { width: (@navbar-dropdown-width * 5); }
+
+/*
+ * Dropbar modifier
+ */
+
+.uk-navbar-dropdown-dropbar {
+    margin-top: @navbar-dropdown-dropbar-margin-top;
+    margin-bottom: @navbar-dropdown-dropbar-margin-bottom;
+    .hook-navbar-dropdown-dropbar;
+}
+
+
+/* Dropdown Nav
+ * Adopts `uk-nav`
+ ========================================================================== */
+
+.uk-navbar-dropdown-nav {
+    .hook-navbar-dropdown-nav;
+}
+
+/*
+ * Items
+ */
+
+.uk-navbar-dropdown-nav > li > a {
+    color: @navbar-dropdown-nav-item-color;
+    .hook-navbar-dropdown-nav-item;
+}
+
+/* Hover + Focus */
+.uk-navbar-dropdown-nav > li > a:hover,
+.uk-navbar-dropdown-nav > li > a:focus {
+    color: @navbar-dropdown-nav-item-hover-color;
+    .hook-navbar-dropdown-nav-item-hover;
+}
+
+/* Active */
+.uk-navbar-dropdown-nav > li.uk-active > a {
+    color: @navbar-dropdown-nav-item-active-color;
+    .hook-navbar-dropdown-nav-item-active;
+}
+
+/*
+ * Header
+ */
+
+.uk-navbar-dropdown-nav .uk-nav-header {
+    color: @navbar-dropdown-nav-header-color;
+    .hook-navbar-dropdown-nav-header;
+}
+
+/*
+ * Divider
+ */
+
+.uk-navbar-dropdown-nav .uk-nav-divider {
+    border-top: @navbar-dropdown-nav-divider-border-width solid @navbar-dropdown-nav-divider-border;
+    .hook-navbar-dropdown-nav-divider;
+}
+
+/*
+ * Sublists
+ */
+
+.uk-navbar-dropdown-nav .uk-nav-sub a { color: @navbar-dropdown-nav-sublist-item-color; }
+
+.uk-navbar-dropdown-nav .uk-nav-sub a:hover,
+.uk-navbar-dropdown-nav .uk-nav-sub a:focus { color: @navbar-dropdown-nav-sublist-item-hover-color; }
+
+.uk-navbar-dropdown-nav .uk-nav-sub li.uk-active > a { color: @navbar-dropdown-nav-sublist-item-active-color; }
+
+
+/* Dropbar
+ ========================================================================== */
+
+.uk-navbar-dropbar {
+    background: @navbar-dropbar-background;
+    .hook-navbar-dropbar;
+}
+
+/*
+ * Slide modifier
+ */
+
+.uk-navbar-dropbar-slide {
+    position: absolute;
+    z-index: @navbar-dropbar-z-index;
+    left: 0;
+    right: 0;
+    .hook-navbar-dropbar-slide;
+}
+
+
+// Hooks
+// ========================================================================
+
+.hook-navbar-misc;
+
+.hook-navbar() {}
+.hook-navbar-container() {}
+.hook-navbar-fxprodesign-container() {}
+.hook-navbar-nav-item() {}
+.hook-navbar-nav-item-hover() {}
+.hook-navbar-nav-item-onclick() {}
+.hook-navbar-nav-item-active() {}
+.hook-navbar-fxprodesign-nav-item() {}
+.hook-navbar-fxprodesign-nav-item-hover() {}
+.hook-navbar-fxprodesign-nav-item-onclick() {}
+.hook-navbar-fxprodesign-nav-item-active() {}
+.hook-navbar-item() {}
+.hook-navbar-toggle(){}
+.hook-navbar-toggle-hover(){}
+.hook-navbar-toggle-icon(){}
+.hook-navbar-toggle-icon-hover(){}
+.hook-navbar-subtitle() {}
+.hook-navbar-fxprodesign() {}
+.hook-navbar-fxprodesign-item() {}
+.hook-navbar-fxprodesign-toggle(){}
+.hook-navbar-fxprodesign-toggle-hover(){}
+.hook-navbar-fxprodesign-toggle-icon(){}
+.hook-navbar-fxprodesign-toggle-icon-hover(){}
+.hook-navbar-fxprodesign-subtitle() {}
+.hook-navbar-primary(){}
+.hook-navbar-transparent(){}
+.hook-navbar-sticky(){}
+.hook-navbar-dropdown(){}
+.hook-navbar-dropdown-dropbar(){}
+.hook-navbar-dropdown-nav(){}
+.hook-navbar-dropdown-nav-item() {}
+.hook-navbar-dropdown-nav-item-hover() {}
+.hook-navbar-dropdown-nav-item-active() {}
+.hook-navbar-dropdown-nav-header() {}
+.hook-navbar-dropdown-nav-divider() {}
+.hook-navbar-dropbar(){}
+.hook-navbar-dropbar-slide(){}
+.hook-navbar-marcus-palmer-container() {}
+.hook-navbar-marcus-palmer() {}
+.hook-navbar-marcus-palmer-item() {}
+.hook-navbar-marcus-palmer-nav-item() {}
+.hook-navbar-marcus-palmer-nav-item-hover() {}
+.hook-navbar-marcus-palmer-nav-item-onclick() {}
+.hook-navbar-marcus-palmer-nav-item-active() {}
+.hook-navbar-marcus-palmer-toggle(){}
+.hook-navbar-marcus-palmer-toggle-hover(){}
+.hook-navbar-marcus-palmer-toggle-icon(){}
+.hook-navbar-marcus-palmer-toggle-icon-hover(){}
+.hook-navbar-marcus-palmer-subtitle() {}
+.hook-navbar-misc() {}
+
+
+// Inverse
+// ========================================================================
+
+@inverse-navbar-nav-item-color:                @inverse-global-muted-color;
+@inverse-navbar-nav-item-hover-color:          @inverse-global-color;
+@inverse-navbar-nav-item-onclick-color:        @inverse-global-emphasis-color;
+@inverse-navbar-nav-item-active-color:         @inverse-global-emphasis-color;
+@inverse-navbar-item-color:                    @inverse-global-color;
+@inverse-navbar-toggle-color:                  @inverse-global-muted-color;
+@inverse-navbar-toggle-hover-color:            @inverse-global-color;
+
+.hook-inverse() {
+
+    .uk-navbar-nav > li > a {
+        color: @inverse-navbar-nav-item-color;
+        .hook-inverse-navbar-nav-item;
+    }
+
+    .uk-navbar-nav > li:hover > a,
+    .uk-navbar-nav > li > a:focus,
+    .uk-navbar-nav > li > a.uk-open {
+        color: @inverse-navbar-nav-item-hover-color;
+        .hook-inverse-navbar-nav-item-hover;
+    }
+
+    .uk-navbar-nav > li > a:active {
+        color: @inverse-navbar-nav-item-onclick-color;
+        .hook-inverse-navbar-nav-item-onclick;
+    }
+
+    .uk-navbar-nav > li.uk-active > a {
+        color: @inverse-navbar-nav-item-active-color;
+        .hook-inverse-navbar-nav-item-active;
+    }
+
+    .uk-navbar-item {
+        color: @inverse-navbar-item-color;
+        .hook-inverse-navbar-item;
+    }
+
+    .uk-navbar-toggle {
+        color: @inverse-navbar-toggle-color;
+        .hook-inverse-navbar-toggle;
+    }
+
+    .uk-navbar-toggle:hover,
+    .uk-navbar-toggle:focus,
+    .uk-navbar-toggle.uk-open {
+        color: @inverse-navbar-toggle-hover-color;
+        .hook-inverse-navbar-toggle-hover;
+    }
+
+}
+
+.hook-inverse-navbar-nav-item() {}
+.hook-inverse-navbar-nav-item-hover() {}
+.hook-inverse-navbar-nav-item-onclick() {}
+.hook-inverse-navbar-nav-item-active() {}
+.hook-inverse-navbar-item() {}
+.hook-inverse-navbar-toggle() {}
+.hook-inverse-navbar-toggle-hover() {}

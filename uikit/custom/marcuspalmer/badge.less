@@ -1,0 +1,236 @@
+// Name:            Badge
+// Description:     Component to create notification badges
+//
+// Component:       `uk-badge`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@badge-size:                                    22px;
+@badge-padding-vertical:                        0;
+@badge-padding-horizontal:                      5px;
+@badge-border-radius:                           500px;
+@badge-background:                              @global-primary-background;
+@badge-color:                                   @global-inverse-color;
+@badge-font-size:                               @global-small-font-size;
+
+@badge-hover-color:                             @global-inverse-color;
+
+// Success
+@fxprodesign-success-badge-size:                                    22px;
+@fxprodesign-success-badge-padding-vertical:                        0;
+@fxprodesign-success-badge-padding-horizontal:                      5px;
+@fxprodesign-success-badge-border-radius:                           500px;
+@fxprodesign-success-badge-background:                              @fxprodesign-badge-success-background;
+@fxprodesign-success-badge-color:                                   @global-inverse-color;
+@fxprodesign-success-badge-font-size:                               @global-small-font-size;
+
+@fxprodesign-success-badge-hover-color:                             @global-inverse-color;
+
+
+@fxprodesign-danger-badge-size:                                    22px;
+
+@fxprodesign-danger-badge-padding-vertical:                        0;
+
+@fxprodesign-danger-badge-padding-horizontal:                      5px;
+
+@fxprodesign-danger-badge-border-radius:                           500px;
+
+@fxprodesign-danger-badge-background:                              @fxprodesign-badge-danger-background;
+
+@fxprodesign-danger-badge-color:                                   @global-inverse-color;
+
+@fxprodesign-danger-badge-font-size:                               @global-small-font-size;
+
+@fxprodesign-danger-badge-hover-color:                             @global-inverse-color;
+
+
+/* ========================================================================
+   Component: Badge
+ ========================================================================== */
+
+/*
+ * 1. Style
+ * 2. Center child vertically and horizontally
+ */
+
+// FX Pro Design
+// Success
+.uk-fxprodesign-success-badge {
+    box-sizing: border-box;
+    min-width: @fxprodesign-success-badge-size;
+    height: @fxprodesign-success-badge-size;
+    padding: @fxprodesign-success-badge-padding-vertical @badge-padding-horizontal;
+    border-radius: @fxprodesign-success-badge-border-radius;
+    vertical-align: middle;
+    /* 1 */
+    background: @fxprodesign-success-badge-background;
+    color: @fxprodesign-success-badge-color;
+    font-size: @fxprodesign-success-badge-font-size;
+    /* 2 */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    .hook-fxprodesign-success-badge;
+}
+
+/*
+ * Required for `a`
+ */
+
+.uk-fxprodesign-success-badge:hover,
+.uk-fxprodesign-success-badge:focus {
+    color: @badge-hover-color;
+    text-decoration: none;
+    outline: none;
+    .hook-fxprodesign-success-badge-hover;
+}
+
+// Danger
+.uk-fxprodesign-danger-badge {
+    box-sizing: border-box;
+    min-width: @fxprodesign-danger-badge-size;
+    height: @fxprodesign-danger-badge-size;
+    padding: @fxprodesign-danger-badge-padding-vertical @fxprodesign-danger-badge-padding-horizontal;
+    border-radius: @fxprodesign-danger-badge-border-radius;
+    vertical-align: middle;
+    /* 1 */
+    background: @fxprodesign-danger-badge-background;
+    color: @fxprodesign-danger-badge-color;
+    font-size: @fxprodesign-danger-badge-font-size;
+    /* 2 */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    .hook-fxprodesign-danger-badge;
+}
+
+/*
+ * Required for `a`
+ */
+
+.uk-fxprodesign-danger-badge:hover,
+.uk-fxprodesign-danger-badge:focus {
+    color: @badge-hover-color;
+    text-decoration: none;
+    outline: none;
+    .hook-fxprodesign-danger-badge-hover;
+}
+
+//Normal
+
+.uk-badge {
+    box-sizing: border-box;
+    min-width: @badge-size;
+    height: @badge-size;
+    padding: @badge-padding-vertical @badge-padding-horizontal;
+    border-radius: @badge-border-radius;
+    vertical-align: middle;
+    /* 1 */
+    background: @badge-background;
+    color: @badge-color;
+    font-size: @badge-font-size;
+    /* 2 */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    .hook-badge;
+}
+
+/*
+ * Required for `a`
+ */
+
+.uk-badge:hover,
+.uk-badge:focus {
+    color: @badge-hover-color;
+    text-decoration: none;
+    outline: none;
+    .hook-badge-hover;
+}
+
+
+// Hooks
+// ========================================================================
+
+.hook-badge-misc;
+
+.hook-badge() {}
+.hook-badge-hover() {}
+.hook-fxprodesign-success-badge() {}
+.hook-fxprodesign-success-badge-hover() {}
+.hook-fxprodesign-danger-badge() {}
+.hook-fxprodesign-danger-badge-hover() {}
+.hook-badge-misc() {}
+
+
+// Inverse
+// ========================================================================
+// Normal
+@inverse-badge-background:                     @inverse-global-primary-background;
+@inverse-badge-color:                          @inverse-global-inverse-color;
+@inverse-badge-hover-color:                    @inverse-global-inverse-color;
+
+
+// Success
+@inverse-fxprodesign-success-badge-background:                     @fxprodesign-success-badge-background;
+@inverse-fxprodesign-success-badge-color:                          @inverse-global-inverse-color;
+@inverse-fxprodesign-success-badge-hover-color:                    @inverse-global-inverse-color;
+
+// Danger
+@inverse-fxprodesign-danger-badge-background:                     @fxprodesign-danger-badge-background;
+@inverse-fxprodesign-danger-badge-color:                          @inverse-global-inverse-color;
+@inverse-fxprodesign-danger-badge-hover-color:                    @inverse-global-inverse-color;
+
+// HOOK INVERSE
+.hook-inverse() {
+
+    .uk-badge {
+        background-color: @inverse-badge-background;
+        color: @inverse-badge-color;
+        .hook-inverse-badge;
+    }
+
+    .uk-badge:hover,
+    .uk-badge:focus {
+        color: @inverse-badge-hover-color;
+        .hook-inverse-badge-hover;
+    }
+	
+	.uk-fxprodesign-success-badge {
+        background-color: @inverse-fxprodesign-success-badge-background;
+        color: @inverse-fxprodesign-success-badge-color;
+        .hook-inverse-fxprodesign-success-badge;
+    }
+
+    .uk-fxprodesign-success-badge:hover,
+    .uk-fxprodesign-success-badge:focus {
+        color: @inverse-fxprodesign-success-badge-hover-color;
+        .hook-inverse-fxprodesign-success-badge-hover;
+    }
+	
+	
+	.uk-fxprodesign-danger-badge {
+        background-color: @inverse-fxprodesign-danger-badge-background;
+        color: @inverse-fxprodesign-danger-badge-color;
+        .hook-inverse-fxprodesign-danger-badge;
+    }
+
+    .uk-fxprodesign-danger-badge:hover,
+    .uk-fxprodesign-danger-badge:focus {
+        color: @inverse-fxprodesign-danger-badge-hover-color;
+        .hook-inverse-fxprodesign-danger-badge-hover;
+    }
+	
+
+}
+
+.hook-inverse-badge() {}
+.hook-inverse-badge-hover() {}
+.hook-inverse-fxprodesign-success-badge() {}
+.hook-inverse-fxprodesign-success-badge-hover() {}
+.hook-inverse-fxprodesign-danger-badge() {}
+.hook-inverse-fxprodesign-danger-badge-hover() {}
