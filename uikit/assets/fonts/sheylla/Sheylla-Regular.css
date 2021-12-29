@@ -1,0 +1,12 @@
+/* Webfont: Sheylla-Regular */@font-face {
+    font-family: 'Sheylla';
+    src: url('Sheylla-Regular.eot'); /* IE9 Compat Modes */
+    src: url('Sheylla-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Sheylla-Regular.woff') format('woff'), /* Modern Browsers */
+         url('Sheylla-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Sheylla-Regular.svg#Sheylla-Regular') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

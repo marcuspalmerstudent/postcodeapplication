@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'Vegas Nova';
+    src: url('VegasNova-Black.eot');
+    src: url('VegasNova-Black.eot?#iefix') format('embedded-opentype'),
+        url('VegasNova-Black.woff2') format('woff2'),
+        url('VegasNova-Black.woff') format('woff'),
+        url('VegasNova-Black.svg#VegasNova-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vegas Nova';
+    src: url('VegasNova-BlackItalic.eot');
+    src: url('VegasNova-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('VegasNova-BlackItalic.woff2') format('woff2'),
+        url('VegasNova-BlackItalic.woff') format('woff'),
+        url('VegasNova-BlackItalic.svg#VegasNova-BlackItalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Vegas Nova';
+    src: url('VegasNova-Light.eot');
+    src: url('VegasNova-Light.eot?#iefix') format('embedded-opentype'),
+        url('VegasNova-Light.woff2') format('woff2'),
+        url('VegasNova-Light.woff') format('woff'),
+        url('VegasNova-Light.svg#VegasNova-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vegas Nova';
+    src: url('VegasNova-ThinItalic.eot');
+    src: url('VegasNova-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('VegasNova-ThinItalic.woff2') format('woff2'),
+        url('VegasNova-ThinItalic.woff') format('woff'),
+        url('VegasNova-ThinItalic.svg#VegasNova-ThinItalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Vegas Nova';
+    src: url('VegasNova-BoldItalic.eot');
+    src: url('VegasNova-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('VegasNova-BoldItalic.woff2') format('woff2'),
+        url('VegasNova-BoldItalic.woff') format('woff'),
+        url('VegasNova-BoldItalic.svg#VegasNova-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Vegas Nova';
+    src: url('VegasNova-LightItalic.eot');
+    src: url('VegasNova-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('VegasNova-LightItalic.woff2') format('woff2'),
+        url('VegasNova-LightItalic.woff') format('woff'),
+        url('VegasNova-LightItalic.svg#VegasNova-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Vegas Nova';
+    src: url('VegasNova-Thin.eot');
+    src: url('VegasNova-Thin.eot?#iefix') format('embedded-opentype'),
+        url('VegasNova-Thin.woff2') format('woff2'),
+        url('VegasNova-Thin.woff') format('woff'),
+        url('VegasNova-Thin.svg#VegasNova-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vegas Nova';
+    src: url('VegasNova-Italic.eot');
+    src: url('VegasNova-Italic.eot?#iefix') format('embedded-opentype'),
+        url('VegasNova-Italic.woff2') format('woff2'),
+        url('VegasNova-Italic.woff') format('woff'),
+        url('VegasNova-Italic.svg#VegasNova-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Vegas Nova';
+    src: url('VegasNova-Bold.eot');
+    src: url('VegasNova-Bold.eot?#iefix') format('embedded-opentype'),
+        url('VegasNova-Bold.woff2') format('woff2'),
+        url('VegasNova-Bold.woff') format('woff'),
+        url('VegasNova-Bold.svg#VegasNova-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vegas Nova';
+    src: url('VegasNova-Regular.eot');
+    src: url('VegasNova-Regular.eot?#iefix') format('embedded-opentype'),
+        url('VegasNova-Regular.woff2') format('woff2'),
+        url('VegasNova-Regular.woff') format('woff'),
+        url('VegasNova-Regular.svg#VegasNova-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

@@ -1,0 +1,328 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+
+<!-- Viewport SCREEN - Marcus Palmer -->
+<meta name="viewport" content="width=device-width, initial-scale=1" id="viewport-meta">
+
+<!-- Favicon - Marcus Palmer -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+	
+<!-- Document CSS Files - Marcus Palmer -->
+ <link rel="stylesheet" href="uikit/dist/css/uikit.marcuspalmer.min.css" />
+<link rel="stylesheet" href="css/objectActionRef.css" />
+
+<!-- Document JS Files - Marcus Palmer -->
+<script src="uikit/dist/js/uikit.min.js"></script>
+<script src="uikit/dist/js/uikit-icons.min.js"></script>
+	
+	
+<!--NO NEED FOR A CUSTOM FILE WHEN COMPONENT UIKIT CAN BE ACCESS AND DIRCTLY MODIFIED (Marcus Palmer) <script src="node_modules/uikit/dist/js/uikit-icons-marcuspalmer.min.js"></script> --> 
+
+<!-- JQuery - Marcus Palmer -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
+
+<!-- Document Title - Marcus Palmer -->	
+<title>Map Search - BALLS Application</title>
+</head>
+
+<!-- Document body starts here - Marcus Palmer -->
+<body>
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+        
+    <div class="uk-flex uk-flex-center">
+    <nav class="uk-navbar-marcus-palmer-container fxprodesign-contact-card-background uk-width-1-1" uk-navbar style="position: relative; z-index: 980;">
+	<!-- Align Navigation Items Left - Marcus Palmer -->
+    <div class="uk-navbar-left">
+		
+		<!-- Logo Text here - Marcus Palmer -->
+		<a class="uk-navbar-item uk-logo" href="#">
+			<img src="images/bristol_city_council2.png" alt="Business Postcode Lookup System"> 
+			<span style="color: aliceblue;" class="uk-margin-small-left">
+				BALS 
+				<span class="uk-text-small">
+					Business Area Lookup System
+				</span>
+			</span>
+		</a>
+
+    </div>
+    
+    <!-- Nanigation Items Aligned Right- Marcus Palmer -->
+    <div class="uk-navbar-right">
+        
+        <!-- Navigation Item Container - Marcus Palmer -->
+        <ul class="uk-navbar-nav">
+            
+            <!-- Item 1 - Marcus Palmer -->
+			<li>
+				<!-- Search element - Marcus Palmer -->
+                 <div class="uk-margin-top uk-visible@s">
+					<form class="uk-search uk-search-default uk-margin-right">
+						<a class="uk-form-icon uk-search-icon-flip" href="search.html" uk-icon="icon:search"></a>
+						<input class="uk-search-input" type="search" placeholder="Search...">
+					</form>
+				</div>
+            </li>
+			
+			<!-- Hide this point if screen larger than 640 - Marcus Palmer -->
+			<li id="" class="uk-hidden@s">
+				
+				<!-- Mobile off-canvas menu using push function to appear marcus palmer -->
+                <a class="" type="button" uk-toggle="target: #offcanvas-flip" uk-icon="icon: table"></a>
+
+				<div id="offcanvas-flip" uk-offcanvas="flip: true overlay: true; mode: push">
+					
+					<!-- Off canvas container- Marcus Palmer-->
+					<div class="uk-offcanvas-bar">
+
+						<button class="uk-offcanvas-close" type="button" uk-close></button>
+						
+						<!-- Menu content unordered list - Marcus Palmer-->
+						<ul class="uk-nav uk-nav-default">
+							
+							<!-- Point one - Marcus Palmer -->
+							<li>
+								<a href="index.html">
+									<span class="uk-margin-small-right" uk-icon="icon: home">
+									</span>
+									Home
+								</a>
+							</li>
+							
+							<!-- Point two - Marcus Palmer -->
+							<li class="uk-active">
+								<a href="search.html">
+									<span class="uk-margin-small-right" uk-icon="icon: search">
+									</span> 
+									Search
+								</a>
+							</li>
+							
+							<!-- Point three - Marcus Palmer -->
+							<li>
+								<a href="register.html">
+									<span class="uk-margin-small-right" uk-icon="icon: users">
+									</span> 
+									Register
+								</a>
+							</li>
+							
+							<!-- Point four - Marcus Palmer -->
+							<li class="uk-nav-divider"></li>
+							<li>
+								<a href="login.html">
+									<span class="uk-margin-small-right" uk-icon="icon: user">
+									</span> 
+									Login
+								</a>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+				
+				
+            </li>
+    
+        </ul>
+    </div>
+</nav>
+    
+</div>
+    
+        
+<!-- Line Seperator Marcus Palmer -->
+<div class="uk-margin-remove-bottom" style="height: 1px; background-image: url(images/seperator_mobile.png);">
+</div>
+        
+</div>
+
+<!-- Grid layout - Marcus Palmer -->
+<div class="uk-grid-match uk-grid-collapse uk-child-width-expand@s uk-text-left uk-height-1-1" uk-grid>
+        
+    <div class="uk-width-1-6@l uk-width-1-6@m uk-width-1-5@s uk-width-1-3 uk-text-center uk-visible@s">
+		
+		<!-- First grid column - Marcus Palmer -->
+        <div class="uk-padding marcus-palmer-side-navigation-background">
+			
+			<!-- Unorderlist navigation setup - Marcus Palmer -->
+            <ul class="uk-iconnav uk-iconnav-vertical uk-position-fixed">
+				
+				<!-- Point 1 - Marcus Palmer -->
+                <li>
+					<!-- Link 1 - Marcus Palmer -->
+                    <a href="index.html" class="uk-button" id="">
+                      <span class="uk-margin-remove-bottom" uk-icon="icon: home; ratio: 1.8"></span>
+                        <br> 
+                        HOME
+                    </a>
+                     
+                </li>
+
+				<!-- Point 2 - Marcus Palmer -->
+                <li class="uk-active">
+					<!-- Link 2 - Marcus Palmer -->
+                    <a href="search.html" class="uk-button">
+                      <span class="uk-margin-remove-bottom" uk-icon="icon: search; ratio: 1.8"></span>
+                        <br> 
+                        Search
+                    </a>
+                </li>
+                
+				<!-- Point 3 - Marcus Palmer -->
+                <li>
+					
+					<!-- Link 3 - Marcus Palmer -->
+                    <a href="register.html" class="uk-button">
+                        <span class="uk-margin-remove-bottom" uk-icon="icon: users; ratio: 1.8"></span>
+                        <br> 
+                        Register
+                    </a>
+                </li>
+                
+				<!-- Point 4 - Marcus Palmer -->
+                <li class="uk-margin-xlarge-bottom">
+					
+					<!-- Link 4 - Marcus Palmer -->
+                    <a href="login.html" class="uk-button">
+                        <span class="uk-margin-remove-bottom" uk-icon="icon: user; ratio: 1.8"></span>
+                        <br> 
+                        Login
+                    </a>
+                </li>
+                
+				<!-- Point 5 - Marcus Palmer -->
+                <li class="uk-margin-medium-top">
+					
+					<!-- Link 5 - Marcus Palmer -->
+                    <a href="#modal-homepage-helpzone" class="uk-button"  style="color: #d55424;" uk-toggle>
+                        <span class="uk-margin-remove-bottom" uk-icon="icon: lifesaver; ratio: 1.8"></span>
+                        <br> 
+                        HELP
+                    </a>
+                </li>
+            </ul>
+            
+        </div>
+       
+    </div>
+    
+	<!-- Body area for main content (container) - Marcus Palmer -->
+    <div class="uk-width-expand main-content">
+		
+		<!-- Shaded container 1 - Marcus Palmer -->
+        <div class="uk-background-muted">
+			
+			
+		</div>
+		
+		<!-- Shaded container 2 - Marcus Palmer -->
+		 <div class="uk-background-muted uk-padding">
+			 
+			 <div class="uk-text-center">
+				 <h1>
+					<span uk-icon="icon: search; ratio:2.0"></span> Map Search
+				 </h1>
+				 
+				 <!-- Search form - Marcus Palmer -->
+				 <form>
+					
+					 <!-- Container - Marcus Palmer -->
+					<div class="uk-margin">
+						
+						<!-- Inline container - Marcus Palmer -->
+						<div class="uk-inline">
+							
+							<!-- Search button - Marcus Palmer -->
+							<a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search" id="searchBtn"></a>
+							
+							<!-- Search input - Marcus Palmer -->
+							<input class="uk-input uk-form-width-large uk-form-warning" type="text" placeholder="Postcode Search...">
+						</div>
+						<a href="search.html" class="uk-button uk-button-fxprodesign uk-button-small uk-margin-xlarge-left">Text View</a>
+					</div>
+
+				</form>
+				 
+				 <!-- Search results container - Marcus Palmer -->
+				 <div class="uk-margin">
+					 
+					 
+					 
+					 <!-- Search results here -Marcus Palmer-->
+					 <iframe src="https://www.google.com/maps/d/embed?mid=1GtGfv4Oc0Ipu2oO6FtvlDkZDZs4DJnXe&ehbc=2E312F" width="800" height="1000"></iframe>
+				 </div>
+			 </div> 
+		</div>
+		
+		<!-- Footer area and links - Marcus Palmer --> 
+		<div class="uk-navbar-marcus-palmer-container uk-padding gillSansMt uk-dark uk-margin-remove-top">
+			
+			<div class="uk-text-center uk-text_small">
+				<p>
+					<a href="index.html" class="" style="color: #FCFCFC;">
+						Home
+					</a> 
+					| 
+					<a href="search.html" class="" style="color: #FCFCFC;">
+						Search
+					</a> 
+					| 
+					<a href="register.html" class="" style="color: #FCFCFC;">
+						Register
+					</a> 
+					| 
+					<a href="login.html" class="" style="color: #FCFCFC;">
+						Login
+					</a> 
+					| 
+					<a href="terms_and_conditions.html" class="" style="color: #FCFCFC;">
+						Terms &amp; Conditions
+					</a> 
+					| 
+					<a href="about_us.html" class="" style="color: #FCFCFC;">
+						About Us
+					</a> 
+					| 
+					<a href="contact_us.html" class="" style="color: #FCFCFC;">
+						Contact Us
+					</a>
+				</p>
+				
+				<span class="" style="color: #FCFCFC;">&copy; 2022 Bristol City Council - BALS</span>
+				
+			</div>
+		
+		</div>
+    </div>
+</div>
+    
+    <!-- Hidden Modal Area - Marcus Palmer -->
+    <div id="modal-homepage-helpzone" uk-modal>
+		<div class="uk-modal-dialog">
+			<button class="uk-modal-close-default" type="button" uk-close></button>
+			<div class="uk-modal-header">
+				<h2 class="uk-modal-title">Help Zone</h2>
+			</div>
+			<div class="uk-modal-body">
+				<p>Through each page you interact with a Help Zone statement, fun fact or navigational steps will be provided.</p>
+				<h3>Map Search help pages</h3>
+			</div>
+			<div class="uk-modal-footer uk-text-right">
+				<button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+			</div>
+		</div>
+	</div>
+    <script src="js/api.js"></script>
+</body>
+</html>
