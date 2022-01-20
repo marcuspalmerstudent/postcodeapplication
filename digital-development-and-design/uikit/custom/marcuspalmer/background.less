@@ -1,0 +1,229 @@
+// Name:            Background
+// Description:     Utilities for backgrounds
+//
+// Component:       `uk-background-*`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+// Homepage guest box colour (Marcus Palmer)
+@guest-search-card-label-background:			#C5A03D;
+
+// Homepage login box colour (Marcus Palmer)
+@bals-login-card-label-background:				#588091;
+
+// Homepage register box colour (Marcus Palmer)
+@bals-register-card-label-background:			#ad344a;
+
+// APPLICATION INFRASTRUCTURE  (Marcus Palmer)
+@background-default-background:                 @global-background;
+@background-muted-background:                   @global-muted-background;
+@background-primary-background:                 @global-primary-background;
+@background-secondary-background:               @global-secondary-background;
+@background-fxprodesign-background:             @global-fxprodesign-slider-background;
+
+@fxprodesign-parent-background:					#513d8a;
+@fxprodesign-admin-background:					#f0506e;
+@fxprodesign-pupil-background:					#1e87f0;
+@fxprodesign-teacher-background:				#ebb600;
+
+@fxprodesign-update-label-background:			#e7e7e7;
+
+@fxprodesign-avatar-background:					#dee9ef;
+@fxprodesign-edu-label-background:				#dee9ef;
+
+@fxprodesign-edu-card-background:				#728087;
+
+@fxprodesign-personal-card-background:			#c66060;
+@fxprodesign-contact-card-background:			#0097de;
+@fxprodesign-mycv-card-background:				#ffb834;
+@fxprodesign-badge-label-background:			#ffffff;
+
+@fxprodesign-add-another-quali-background:		#e56201;
+
+@fxprodesign-quali-label-background:			#ffd700;
+
+@fxprodesign-edu-placeholder-background:		#728087;
+
+@fxprodesign-edu-details-placeholder-background: #c66060;
+
+@fxprodesign-edit-label-background: 			#c7caf4;	
+
+@fxprodesign-badge-success-background:			#32d196;
+@fxprodesign-badge-danger-background:			#f0506e;
+
+@fxprodesign-college-card-background:			#4f6a2f;
+
+@fxprodesign-university-card-background:		#32004b;
+@fxprodesign-goldedu-card-background:			#ffb100;
+
+@marcus-palmer-navigation-background:           #313955;
+@marcus-palmer-side-navigation-background:      #1b223a;
+
+/* ========================================================================
+   Component: Background
+ ========================================================================== */
+
+
+/* Color
+ ========================================================================== */
+
+.uk-background-default { background-color: @background-default-background; }
+.uk-background-muted { background-color: @background-muted-background; }
+.uk-background-primary { background-color: @background-primary-background; }
+.uk-background-secondary { background-color: @background-secondary-background; }
+.uk-background-fxprodesign { background-color: @background-fxprodesign-background; }
+
+.fxprodesign-parent-background { background-color: @fxprodesign-parent-background; }
+
+.fxprodesign-admin-background { background-color: @fxprodesign-admin-background; }
+
+.fxprodesign-pupil-background { background-color: @fxprodesign-pupil-background; }
+
+.fxprodesign-teacher-background { background-color: @fxprodesign-teacher-background; }
+
+.fxprodesign-avatar-background {background-color: @fxprodesign-avatar-background;}
+
+.fxprodesign-edu-label-background {background-color: @fxprodesign-edu-label-background;}
+
+.fxprodesign-quali-label-background {background-color: @fxprodesign-quali-label-background;}
+
+.fxprodesign-add-another-quali-background {background-color: @fxprodesign-add-another-quali-background;}
+
+.fxprodesign-edu-placeholder-background {background-color: @fxprodesign-edu-placeholder-background;}
+
+.fxprodesign-edu-details-placeholder-background {background-color: @fxprodesign-edu-details-placeholder-background;}
+
+.fxprodesign-generic-label {background-color: @fxprodesign-badge-label-background;}
+
+.fxprodesign-edit-label-background {background-color: @fxprodesign-edit-label-background;}
+
+.fxprodesign-badge-success-background {background-color: @fxprodesign-badge-success-background;}
+
+.fxprodesign-college-card-background {background-color: @fxprodesign-college-card-background;}
+
+.fxprodesign-university-card-background {background-color: @fxprodesign-university-card-background;}
+
+.fxprodesign-goldedu-card-background {background-color: @fxprodesign-goldedu-card-background;}
+
+.marcus-palmer-navigation-background {background-color: @marcus-palmer-navigation-background;}
+
+.marcus-palmer-side-navigation-background {background-color: @marcus-palmer-side-navigation-background;}
+
+
+/* Size
+ ========================================================================== */
+
+.uk-background-cover,
+.uk-background-contain {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.uk-background-cover { background-size: cover; }
+.uk-background-contain { background-size: contain; }
+
+
+/* Position
+ ========================================================================== */
+
+.uk-background-top-left { background-position: 0 0; }
+.uk-background-top-center { background-position: 50% 0; }
+.uk-background-top-right { background-position: 100% 0; }
+.uk-background-center-left { background-position: 0 50%; }
+.uk-background-center-center { background-position: 50% 50%; }
+.uk-background-center-right { background-position: 100% 50%; }
+.uk-background-bottom-left { background-position: 0 100%; }
+.uk-background-bottom-center { background-position: 50% 100%; }
+.uk-background-bottom-right { background-position: 100% 100%; }
+
+
+/* Repeat
+ ========================================================================== */
+
+.uk-background-norepeat { background-repeat: no-repeat; }
+
+
+/* Attachment
+ ========================================================================== */
+
+/*
+ * 1. Fix bug introduced in Chrome 67: the background image is not visible if any element on the page uses `translate3d`
+ */
+
+.uk-background-fixed {
+    background-attachment: fixed;
+    /* 1 */
+    backface-visibility: hidden;
+}
+
+/*
+ * Exclude touch devices because `fixed` doesn't work on iOS and Android
+ */
+
+@media (pointer: coarse) {
+    .uk-background-fixed { background-attachment: scroll; }
+}
+
+
+/* Image
+ ========================================================================== */
+
+/* Phone portrait and smaller */
+@media (max-width: @breakpoint-xsmall-max) {
+
+    .uk-background-image\@s { background-image: none !important; }
+
+}
+
+/* Phone landscape and smaller */
+@media (max-width: @breakpoint-small-max) {
+
+    .uk-background-image\@m { background-image: none !important; }
+
+}
+
+/* Tablet landscape and smaller */
+@media (max-width: @breakpoint-medium-max) {
+
+    .uk-background-image\@l { background-image: none !important; }
+
+}
+
+/* Desktop and smaller */
+@media (max-width: @breakpoint-large-max) {
+
+    .uk-background-image\@xl {background-image: none !important; }
+
+}
+
+
+/* Blend modes
+ ========================================================================== */
+
+.uk-background-blend-multiply { background-blend-mode: multiply; }
+.uk-background-blend-screen { background-blend-mode: screen; }
+.uk-background-blend-overlay { background-blend-mode: overlay; }
+.uk-background-blend-darken { background-blend-mode: darken; }
+.uk-background-blend-lighten { background-blend-mode: lighten; }
+.uk-background-blend-color-dodge { background-blend-mode: color-dodge; }
+.uk-background-blend-color-burn { background-blend-mode: color-burn; }
+.uk-background-blend-hard-light { background-blend-mode: hard-light; }
+.uk-background-blend-soft-light { background-blend-mode: soft-light; }
+.uk-background-blend-difference { background-blend-mode: difference; }
+.uk-background-blend-exclusion { background-blend-mode: exclusion; }
+.uk-background-blend-hue { background-blend-mode: hue; }
+.uk-background-blend-saturation { background-blend-mode: saturation; }
+.uk-background-blend-color { background-blend-mode: color; }
+.uk-background-blend-luminosity { background-blend-mode: luminosity; }
+
+
+// Hooks
+// ========================================================================
+
+.hook-background-misc;
+
+.hook-background-misc() {}

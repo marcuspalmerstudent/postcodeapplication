@@ -34290,7 +34290,7 @@ ul.uk-nav-sub {
   background: #2b2f40;
 }
 .uk-navbar-marcus-palmer-container:not(.uk-navbar-transparent) {
-  background: #313955;
+  background: #0183AB;
 }
 /*
  * Remove pseudo elements created by micro clearfix as precaution (if Container component is used)
@@ -38200,7 +38200,7 @@ iframe.uk-cover {
   background-color: #ffb100;
 }
 .marcus-palmer-navigation-background {
-  background-color: #313955;
+  background-color: #0183AB;
 }
 .marcus-palmer-side-navigation-background {
   background-color: #1b223a;

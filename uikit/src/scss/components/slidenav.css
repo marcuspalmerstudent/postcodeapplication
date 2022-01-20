@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$global-color".
-        on line 21 of C:\Abyss Web Server\htdocs\vunerableSystem\uikit\src\scss\components\slidenav.scss
+        on line 21 of C:\Abyss Web Server\htdocs\balls_application\uikit\src\scss\components\slidenav.scss
 
 16: // ========================================================================
 17: 
@@ -15,47 +15,47 @@ Error: Undefined variable: "$global-color".
 26: $slidenav-large-padding-horizontal:              $slidenav-large-padding-vertical !default;
 
 Backtrace:
-C:\Abyss Web Server\htdocs\vunerableSystem\uikit\src\scss\components\slidenav.scss:21
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/variable.rb:49:in `_perform'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/node.rb:50:in `perform'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:182:in `perform_arg'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `block in _perform'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `each'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `each_with_index'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `each'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `map'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `_perform'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/node.rb:50:in `perform'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:478:in `visit_variable'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:10:in `visit'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:20:in `render'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:290:in `render'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:396:in `run'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:63:in `process_result'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/bin/sass:23:in `load'
-C:/Program Files/Adobe/Adobe Dreamweaver 2020/ruby/bin/sass:23:in `<main>'
+C:\Abyss Web Server\htdocs\balls_application\uikit\src\scss\components\slidenav.scss:21
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/variable.rb:49:in `_perform'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:182:in `perform_arg'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `block in _perform'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `each'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `each_with_index'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `each'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `map'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `_perform'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:478:in `visit_variable'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:10:in `visit'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:20:in `render'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:290:in `render'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:396:in `run'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:63:in `process_result'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/bin/sass:23:in `load'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/bin/sass:23:in `<main>'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$global-color\".\A         on line 21 of C:\Abyss Web Server\htdocs\vunerableSystem\uikit\src\scss\components\slidenav.scss\A \A 16: // ========================================================================\A 17: \A 18: $slidenav-padding-vertical:                      5px !default;\A 19: $slidenav-padding-horizontal:                    10px !default;\A 20: \A 21: $slidenav-color:                                 rgba($global-color, 0.5) !default;\A 22: $slidenav-hover-color:                           rgba($global-color, 0.9) !default;\A 23: $slidenav-active-color:                          rgba($global-color, 0.5) !default;\A 24: \A 25: $slidenav-large-padding-vertical:                10px !default;\A 26: $slidenav-large-padding-horizontal:              $slidenav-large-padding-vertical !default;"; }
+  content: "Error: Undefined variable: \"$global-color\".\A         on line 21 of C:\Abyss Web Server\htdocs\balls_application\uikit\src\scss\components\slidenav.scss\A \A 16: // ========================================================================\A 17: \A 18: $slidenav-padding-vertical:                      5px !default;\A 19: $slidenav-padding-horizontal:                    10px !default;\A 20: \A 21: $slidenav-color:                                 rgba($global-color, 0.5) !default;\A 22: $slidenav-hover-color:                           rgba($global-color, 0.9) !default;\A 23: $slidenav-active-color:                          rgba($global-color, 0.5) !default;\A 24: \A 25: $slidenav-large-padding-vertical:                10px !default;\A 26: $slidenav-large-padding-horizontal:              $slidenav-large-padding-vertical !default;"; }

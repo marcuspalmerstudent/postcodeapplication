@@ -1,0 +1,537 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+
+<!-- Viewport SCREEN - Marcus Palmer -->
+<meta name="viewport" content="width=device-width, initial-scale=1" id="viewport-meta">
+
+<!-- Favicon - Marcus Palmer -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+	
+<!-- Document CSS Files - Marcus Palmer -->
+ <link rel="stylesheet" href="uikit/dist/css/uikit.marcuspalmer.min.css" />
+<link rel="stylesheet" href="css/objectActionRef.css" />
+
+<!-- Document JS Files - Marcus Palmer -->
+<script src="uikit/dist/js/uikit.min.js"></script>
+<script src="uikit/dist/js/uikit-icons.min.js"></script>
+
+<!-- Add Ajax to application - Marcus Palmer -->
+<script
+          src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous"></script>
+	
+<!--NO NEED FOR A CUSTOM FILE WHEN COMPONENT UIKIT CAN BE ACCESS AND DIRCTLY MODIFIED (Marcus Palmer) <script src="node_modules/uikit/dist/js/uikit-icons-marcuspalmer.min.js"></script> --> 
+
+<!-- JQuery - Marcus Palmer -->
+<!-- NOT NEEDED FOR THIS UNI PROJECT <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	-->
+
+<!-- Document Title - Marcus Palmer -->	
+<title>Marcus Palmer - BALLS Application</title>
+</head>
+
+<!-- Document body starts here - Marcus Palmer -->
+<body>
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+        
+    <div class="uk-flex uk-flex-center">
+    <nav class="uk-navbar-marcus-palmer-container fxprodesign-contact-card-background uk-width-1-1" uk-navbar style="position: relative; z-index: 980;">
+	<!-- Align Navigation Items Left - Marcus Palmer -->
+    <div class="uk-navbar-left">
+		
+		<!-- Logo Text here - Marcus Palmer -->
+		<a class="uk-navbar-item uk-logo" href="#">
+			<img src="images/bristol_city_council2.png" alt="Business Postcode Lookup System"> 
+			<span style="color: aliceblue;" class="uk-margin-small-left">
+				BALS 
+				<span class="uk-text-small">
+					Business Area Lookup System
+				</span>
+			</span>
+		</a>
+
+    </div>
+    
+    <!-- Nanigation Items Aligned Right- Marcus Palmer -->
+    <div class="uk-navbar-right">
+        
+        <!-- Navigation Item Container - Marcus Palmer -->
+        <ul class="uk-navbar-nav">
+            
+            <!-- Item 1 - Marcus Palmer -->
+			<li>
+				<!-- Search element - Marcus Palmer -->
+                 <div class="uk-margin-top uk-visible@s">
+					<form class="uk-search uk-search-default uk-margin-right">
+						<a class="uk-form-icon uk-search-icon-flip" href="search.html" uk-icon="icon:search"></a>
+						<input class="uk-search-input" type="search" placeholder="Property Search">
+					
+					</form>
+				</div>
+            </li>
+			
+			<!-- Hide this point if screen larger than 640 - Marcus Palmer -->
+			<li id="" class="uk-hidden@s">
+				
+				<!-- Mobile off-canvas menu using push function to appear marcus palmer -->
+                <a class="" type="button" uk-toggle="target: #offcanvas-flip" uk-icon="icon: table"></a>
+
+				<div id="offcanvas-flip" uk-offcanvas="flip: true overlay: true; mode: push">
+					
+					<!-- Off canvas container- Marcus Palmer-->
+					<div class="uk-offcanvas-bar">
+
+						<button class="uk-offcanvas-close" type="button" uk-close></button>
+						
+						<!-- Menu content unordered list - Marcus Palmer-->
+						<ul class="uk-nav uk-nav-default">
+							
+							<!-- Point one - Marcus Palmer -->
+							<li class="uk-active">
+								<a href="index.html">
+									<span class="uk-margin-small-right" uk-icon="icon: home">
+									</span>
+									Home
+								</a>
+							</li>
+							
+							<!-- Point two - Marcus Palmer -->
+							<li>
+								<a href="search.html">
+									<span class="uk-margin-small-right" uk-icon="icon: search">
+									</span> 
+									Properties
+								</a>
+							</li>
+							
+							<!-- Point three - Marcus Palmer -->
+							<li>
+								<a href="register.html">
+									<span class="uk-margin-small-right" uk-icon="icon: users">
+									</span> 
+									Register
+								</a>
+							</li>
+							
+							<!-- Point four - Marcus Palmer -->
+							<li>
+								<a href="login.html">
+									<span class="uk-margin-small-right" uk-icon="icon: user">
+									</span> 
+									Login
+								</a>
+							</li>
+							
+							<!-- Content divider - Marcus Palmer -->
+							
+							<li class="uk-nav-divider"></li>
+							<!-- Point five - Marcus Palmer -->
+							<li>
+								<a href="#modal-homepage-helpzone" class="uk-button"  style="color: #d55424;" uk-toggle>
+									<span class="uk-margin-small-right" uk-icon="icon: lifesaver">
+									</span> 
+									Help
+								</a>
+							</li>
+							
+							
+						</ul>
+
+					</div>
+				</div>
+				
+				
+            </li>
+    
+        </ul>
+    </div>
+</nav>
+    
+</div>
+    
+        
+<!-- Line Seperator Marcus Palmer -->
+<div class="uk-margin-remove-bottom" style="height: 1px; background-image: url(images/seperator_mobile.png);">
+</div>
+        
+</div>
+
+<!-- Grid layout - Marcus Palmer -->
+<div class="uk-grid-match uk-grid-collapse uk-child-width-expand@s uk-text-left uk-height-1-1" uk-grid>
+        
+    <div class="uk-width-1-6@l uk-width-1-6@m uk-width-1-5@s uk-width-1-3 uk-text-center uk-visible@s"> 
+		
+		<!-- First grid column - Marcus Palmer -->
+        <div class="uk-padding marcus-palmer-side-navigation-background">
+			
+			<!-- Unorderlist navigation setup - Marcus Palmer -->
+            <ul class="uk-iconnav uk-iconnav-vertical uk-position-fixed">
+				
+				<!-- Point 1 - Marcus Palmer -->
+                <li class="uk-active">
+					<!-- Link 1 - Marcus Palmer -->
+                    <a href="index.html" class="uk-button" id="">
+                      <span class="uk-margin-remove-bottom" uk-icon="icon: home; ratio: 1.8"></span>
+                        <br> 
+                        HOME
+                    </a>
+                     
+                </li>
+
+				<!-- Point 2 - Marcus Palmer -->
+                <li>
+					<!-- Link 2 - Marcus Palmer -->
+                    <a href="search.html" class="uk-button">
+                      <span class="uk-margin-remove-bottom" uk-icon="icon: search; ratio: 1.8"></span>
+                        <br> 
+                        Properties
+                    </a>
+                </li>
+                
+				<!-- Point 3 - Marcus Palmer -->
+                <li>
+					
+					<!-- Link 3 - Marcus Palmer -->
+                    <a href="register.html" class="uk-button">
+                        <span class="uk-margin-remove-bottom" uk-icon="icon: users; ratio: 1.8"></span>
+                        <br> 
+                        Register
+                    </a>
+                </li>
+                
+				<!-- Point 4 - Marcus Palmer -->
+                <li class="uk-margin-xlarge-bottom">
+					
+					<!-- Link 4 - Marcus Palmer -->
+                    <a href="login.html" class="uk-button">
+                        <span class="uk-margin-remove-bottom" uk-icon="icon: user; ratio: 1.8"></span>
+                        <br> 
+                        Login
+                    </a>
+                </li>
+                
+				<!-- Point 5 - Marcus Palmer -->
+                <li class="uk-margin-medium-top">
+					
+					<!-- Link 5 - Marcus Palmer -->
+                    <a href="#modal-homepage-helpzone" class="uk-button"  style="color: #d55424;" uk-toggle>
+                        <span class="uk-margin-remove-bottom" uk-icon="icon: lifesaver; ratio: 1.8"></span>
+                        <br> 
+                        HELP
+                    </a>
+                </li>
+            </ul>
+            
+        </div>
+       
+    </div>
+    
+	<!-- Body area for main content (container) - Marcus Palmer -->
+    <div class="uk-width-expand main-content">
+		
+		<!-- Shaded container 1 - Marcus Palmer -->
+        <div class="uk-background-muted">
+			
+			<!-- Slideshow show on small screens- Marcus Palmer -->
+			<div class="uk-position-relative uk-visible-toggle uk-light uk-hidden@l" tabindex="-1" uk-slideshow="ratio: 6:3; autoplay: true; animation: push">
+
+				<!-- Unorderlist slideshow container - Marcus Palmer -->
+				<ul class="uk-slideshow-items">
+					
+					<!-- Point 1 - Marcus Palmer -->
+					<li>
+						<!-- Slideshow image 1 - Marcus Palmer -->
+						<img src="images/slideshow/slide1.png" alt="" uk-cover>
+
+						<!-- Overlay content - Marcus Palmer -->
+						<div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+							
+							<!-- Overlay Header- Marcus Palmer -->
+							<h3 class="uk-margin-remove">
+								Developing New Homes
+							</h3>
+							<p class="uk-margin-remove uk-visible@m">
+								Does your business develop new homes or business premises?<br>Then check out our terminated property list for the best value properties on the market.
+							</p>
+							
+							<!-- Link - Marcus Palmer -->
+							<a href="" class="uk-button uk-button-default uk-button-small uk-margin-top ">Lets Go</a>
+						</div>
+					</li>
+					
+					<!-- Point 2 - Marcus Palmer -->
+					<li>
+						<!-- Slide Image 2 - Marcus Palmer-->
+						<img src="images/slideshow/slide2.png" alt="" uk-cover>
+						
+						<!-- Overlay content - Marcus Palmer -->
+						<div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+							
+							<!-- Overlay header - Marcus Palmer -->
+							<h3 class="uk-margin-remove">
+								Developing New Homes
+							</h3>
+							
+							<!-- Overlay content - Marcus Palmer -->
+							<p class="uk-margin-remove uk-visible@m">
+								Does your business develop new homes or business premises?<br>Then check out our terminated property list for the best value properties on the market.
+							</p>
+							
+							<!-- Link - Marcus Palmer -->
+							<a href="" class="uk-button uk-button-default uk-button-small uk-margin-top ">
+								Lets Go
+							</a>
+						</div>
+						
+					</li>
+					<li>
+						<img src="images/slideshow/slide3.png" alt="" uk-cover>
+						
+						<!-- Overlay content - Marcus Palmer -->
+						<div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+							
+							<!-- Overlay header - Marcus Palmer -->
+							<h3 class="uk-margin-remove">
+								Developing New Homes
+							</h3>
+							
+							<!-- Overlay content - Marcus Palmer -->
+							<p class="uk-margin-remove uk-visible@m">
+								Does your business develop new homes or business premises?<br>Then check out our terminated property list for the best value properties on the market.
+							</p>
+							
+							<!-- Link - Marcus Palmer -->
+							<a href="" class="uk-button uk-button-default uk-button-small uk-margin-top ">
+								Lets Go
+							</a>
+						</div>
+						
+					</li>
+				</ul>
+				
+				<!-- Slideshow navigational buttons - Marcus Palmer -->
+				<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+				<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+				
+				<!-- Line Seperator - Marcus Palmer -->
+				<div class="uk-margin-remove-bottom uk-visible@m" style="height: 1px; background-image: url(images/seperator_mobile.png);">
+				</div>
+			</div>
+			
+			<!-- Slideshow show on large screens- Marcus Palmer -->
+			<div class="uk-position-relative uk-visible-toggle uk-light uk-visible@l" tabindex="-1" uk-slideshow="ratio: 10:3; autoplay: true; animation: push">
+
+				<!-- Unorderlist slideshow container - Marcus Palmer -->
+				<ul class="uk-slideshow-items">
+					
+					<!-- Point 1 - Marcus Palmer -->
+					<li>
+						<!-- Slideshow image 1 - Marcus Palmer -->
+						<img src="images/slideshow/slide1.png" alt="" uk-cover>
+
+						<!-- Overlay content - Marcus Palmer -->
+						<div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+							
+							<!-- Overlay Header- Marcus Palmer -->
+							<h3 class="uk-margin-remove">
+								Developing New Homes
+							</h3>
+							<p class="uk-margin-remove uk-visible@m">
+								Does your business develop new homes or business premises?<br>Then check out our terminated property list for the best value properties on the market.
+							</p>
+							
+							<!-- Link - Marcus Palmer -->
+							<a href="" class="uk-button uk-button-default uk-button-small uk-margin-top ">Lets Go</a>
+						</div>
+					</li>
+					
+					<!-- Point 2 - Marcus Palmer -->
+					<li>
+						<!-- Slide Image 2 - Marcus Palmer-->
+						<img src="images/slideshow/slide2.png" alt="" uk-cover>
+						
+						<!-- Overlay content - Marcus Palmer -->
+						<div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+							
+							<!-- Overlay header - Marcus Palmer -->
+							<h3 class="uk-margin-remove">
+								Developing New Homes
+							</h3>
+							
+							<!-- Overlay content - Marcus Palmer -->
+							<p class="uk-margin-remove uk-visible@m">
+								Does your business develop new homes or business premises?<br>Then check out our terminated property list for the best value properties on the market.
+							</p>
+							
+							<!-- Link - Marcus Palmer -->
+							<a href="" class="uk-button uk-button-default uk-button-small uk-margin-top ">
+								Lets Go
+							</a>
+						</div>
+						
+					</li>
+					<li>
+						<img src="images/slideshow/slide3.png" alt="" uk-cover>
+						
+						<!-- Overlay content - Marcus Palmer -->
+						<div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+							
+							<!-- Overlay header - Marcus Palmer -->
+							<h3 class="uk-margin-remove">
+								Developing New Homes
+							</h3>
+							
+							<!-- Overlay content - Marcus Palmer -->
+							<p class="uk-margin-remove uk-visible@m">
+								Does your business develop new homes or business premises?<br>Then check out our terminated property list for the best value properties on the market.
+							</p>
+							
+							<!-- Link - Marcus Palmer -->
+							<a href="" class="uk-button uk-button-default uk-button-small uk-margin-top ">
+								Lets Go
+							</a>
+						</div>
+						
+					</li>
+				</ul>
+				
+				<!-- Slideshow navigational buttons - Marcus Palmer -->
+				<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+				<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+				
+				<!-- Line Seperator - Marcus Palmer -->
+				<div class="uk-margin-remove-bottom uk-visible@m" style="height: 1px; background-image: url(images/seperator_mobile.png);">
+				</div>
+			</div>
+			
+			
+			
+		</div>
+		
+		<!-- Shaded container 2 - Marcus Palmer -->
+		 <div class="uk-section uk-section-default uk-padding">
+			 
+			 <div class="uk-text-center">
+				 <h1>
+					 Welcome to BALS
+				 </h1>
+				 <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
+					<div>
+						<div class="uk-card uk-card-guest-search uk-card-body">
+							<h3  style="color: azure">
+								<span uk-icon="icon: search; ratio: 1.6">
+								</span> 
+								Property Search
+							</h3>
+								<p>
+									Searching for property or land for development is easy and fast, bringing you a step ahead of your competitors.
+								</p>
+							<a href="search.html" class="uk-button uk-button-default"> Search</a>
+						</div>
+					 </div>
+					<div>
+						<div class="uk-card uk-card-bals-login uk-card-body">
+							<h3  style="color: azure">
+								<span uk-icon="icon: user; ratio: 1.6">
+								</span> 
+								Login
+							</h3>
+							<p>
+								Login to save and view your saved searches at any time, making property comparison and price check a breeze!
+							</p>
+							<a href="login.html" class="uk-button uk-button-default">Login</a>
+						</div>
+					</div>
+					<div>
+						<div class="uk-card uk-card-bals-register uk-card-body">
+							<h3  style="color: azure">
+								<span uk-icon="icon: users; ratio: 1.6">
+								</span> 
+								Register
+							</h3>
+							<p>
+								Register to experience all the free advanced features available to you and your business when searching for properties or land.
+							</p>
+							<a href="register.html" class="uk-button uk-button-default">Register</a>
+						</div>
+					</div>
+				</div>
+			 </div> 
+		</div>
+	
+		<!-- Footer area and links - Marcus Palmer --> 
+		<div class="uk-navbar-marcus-palmer-container uk-padding gillSansMt uk-dark">
+			
+			<div class="uk-text-center uk-text_small">
+				<p>
+					<a href="index.html" class="" style="color: #FCFCFC;">
+						Home
+					</a> 
+					| 
+					<a href="search.html" class="" style="color: #FCFCFC;">
+						Properties
+					</a> 
+					| 
+					<a href="register.html" class="" style="color: #FCFCFC;">
+						Register
+					</a> 
+					| 
+					<a href="login.html" class="" style="color: #FCFCFC;">
+						Login
+					</a> 
+					| 
+					<a href="terms_and_conditions.html" class="" style="color: #FCFCFC;">
+						Terms &amp; Conditions
+					</a> 
+					| 
+					<a href="about_us.html" class="" style="color: #FCFCFC;">
+						About Us
+					</a> 
+					| 
+					<a href="contact_us.html" class="" style="color: #FCFCFC;">
+						Contact Us
+					</a>
+				</p>
+				
+				<span class="" style="color: #FCFCFC;">&copy; 2022 Bristol City Council - BALS</span>
+				<p>
+					<!-- Social Media Links -Marcus Palmer -->
+					<a href="https://twitter.com/" target="_blank" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
+					<a href="https://www.facebook.com/" target="_blank" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
+					<a href="https://www.instagram.com/?hl=en" target="_blank" class="uk-icon-button" uk-icon="instagram"></a>
+				</p>
+			</div>
+		
+		</div>
+    </div>
+</div>
+    
+    <!-- Hidden Modal Area - Marcus Palmer -->
+    <div id="modal-homepage-helpzone" uk-modal>
+		<div class="uk-modal-dialog">
+			<button class="uk-modal-close-default" type="button" uk-close></button>
+			<div class="uk-modal-header">
+				<h2 class="uk-modal-title">Help Zone</h2>
+			</div>
+			<div class="uk-modal-body">
+				<p>Through each page you interact with a Help Zone statement, fun fact or navigational steps will be provided.</p>
+				
+				<h3>Homepage help pages</h3>
+			</div>
+			<div class="uk-modal-footer uk-text-right">
+				<button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+			</div>
+		</div>
+	</div>
+    <script src="js/api.js"></script>
+</body>
+</html>
